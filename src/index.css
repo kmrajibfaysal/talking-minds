@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
-}
-
-.dalkfjlads {
-  color: #1f8d86;
 }

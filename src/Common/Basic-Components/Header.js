@@ -17,7 +17,7 @@ function Header() {
                 <div className="flex md:order-2">
                     <button
                         type="button"
-                        className="mr-3 rounded-lg bg-root px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-btn focus:outline-none  md:mr-0"
+                        className="mr-3 rounded-lg bg-root px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-root hover:bg-btn  focus:outline-none md:mr-0"
                     >
                         Login
                     </button>
@@ -63,7 +63,7 @@ function Header() {
                         <li>
                             <Link
                                 to="/home"
-                                className="block rounded py-2 pr-4 pl-3 text-gray-700  hover:text-link md:p-0"
+                                className="block rounded py-2 pr-4 pl-3 text-gray-700    hover:text-link md:p-0"
                                 aria-current="page"
                             >
                                 Home
