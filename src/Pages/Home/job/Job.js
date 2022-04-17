@@ -20,7 +20,7 @@ function Job() {
             </div>
 
             <div className="mx-auto mt-9 flex max-w-7xl flex-col items-center justify-between  md:flex-row">
-                <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12  shadow transition duration-150 ease-out hover:drop-shadow-lg hover:ease-in">
+                <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12  shadow transition duration-150 ease-out hover:shadow-lg hover:ease-in">
                     <img className="mb-4" src={depression} alt="" />
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
                         Depression Therapy
@@ -33,7 +33,7 @@ function Job() {
                         More info -->
                     </button>
                 </div>
-                <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12  shadow transition duration-150 ease-out hover:drop-shadow-lg hover:ease-in">
+                <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12  shadow transition duration-150 ease-out hover:shadow-lg hover:ease-in">
                     <img className="mb-4" src={couples} alt="" />
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
                         Depression Therapy
@@ -46,7 +46,7 @@ function Job() {
                         More info -->
                     </button>
                 </div>
-                <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12  shadow transition duration-150 ease-out hover:drop-shadow-lg hover:ease-in">
+                <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12  shadow transition duration-150 ease-out hover:shadow-lg hover:ease-in">
                     <img className="mb-4" src={individual} alt="" />
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
                         Depression Therapy
@@ -59,6 +59,11 @@ function Job() {
                         More info -->
                     </button>
                 </div>
+            </div>
+            <div className="mx-auto flex items-center justify-center">
+                <button className="mx-4 mb-3 mt-5 rounded-full bg-root px-[40px] py-[14px] font-bold text-white hover:scale-105">
+                    All Programs
+                </button>
             </div>
         </div>
     );
