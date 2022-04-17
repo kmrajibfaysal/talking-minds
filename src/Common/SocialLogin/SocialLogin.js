@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React from 'react';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 
@@ -18,15 +20,13 @@ function SocialLogin() {
 
     const handleGoogleSignIn = async () => {
         await signInWithGoogle();
+        user1 && toast('You are logged in!');
     };
 
     const handleGithubLogin = async () => {
         await signInWithGithub();
+        user2 && toast('You are logged in!');
     };
-
-    if (user1 || user2) {
-        navigate('/');
-    }
 
     return (
         <>

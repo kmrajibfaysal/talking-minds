@@ -94,18 +94,18 @@ function Header() {
                         </li>
                         <li>
                             <Link
-                                to="/about"
-                                className="block rounded py-2 pr-4 pl-3 font-bold text-gray-700  hover:text-link md:p-0"
-                            >
-                                About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
                                 to="/services"
                                 className="block rounded py-2 pr-4 pl-3 font-bold text-gray-700  hover:text-link md:p-0"
                             >
                                 Services
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/checkout"
+                                className="block rounded py-2 pr-4 pl-3 font-bold text-gray-700  hover:text-link md:p-0"
+                            >
+                                Checkout
                             </Link>
                         </li>
                         <li>

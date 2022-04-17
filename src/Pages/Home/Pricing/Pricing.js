@@ -11,8 +11,7 @@ function Pricing() {
                     Pricing
                 </h1>
                 <p className=" mt-3 text-center text-xl text-gray-700">
-                    Sit amet nulla facilisi morbi tempus. <br /> Nulla facilisi cras fermentum odio
-                    eu.
+                    Here are three types of service plan I am providing right now.
                 </p>
             </div>
 

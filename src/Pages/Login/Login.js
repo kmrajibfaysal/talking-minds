@@ -7,6 +7,8 @@
 import React, { useRef, useState } from 'react';
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../../Common/Loading/Loading';
 import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
@@ -46,6 +48,7 @@ function Login() {
 
         if (validateEmail) {
             await signInWithEmailAndPassword(email, password);
+            toast('You are logged in!');
         } else {
             setErr('Your email is invalid!');
         }
@@ -57,10 +60,6 @@ function Login() {
 
     if (loading) {
         return <Loading />;
-    }
-
-    if (user1 || user2) {
-        navigate('/');
     }
 
     return (
@@ -103,7 +102,9 @@ function Login() {
                             aria-label="enter email address"
                             role="input"
                             type="email"
-                            className="text-md mt-2 w-full rounded border border-root bg-gray-100 py-3 pl-3 font-medium leading-none text-gray-800 focus:outline-none "
+                            className={`text-md mt-2 w-full rounded border ${
+                                err ? 'border-red-600' : 'border-root'
+                            } bg-gray-100 py-3 pl-3 font-medium leading-none text-gray-800 focus:outline-none `}
                         />
                     </div>
                     <div className="mt-6  w-full">
@@ -116,7 +117,9 @@ function Login() {
                                 aria-label="enter Password"
                                 role="input"
                                 type="password"
-                                className="text-md mt-2 w-full rounded border border-root bg-gray-100 py-3 pl-3 font-medium leading-none text-gray-800 focus:outline-none"
+                                className={`text-md mt-2 w-full rounded border ${
+                                    err ? 'border-red-600' : 'border-root'
+                                } bg-gray-100 py-3 pl-3 font-medium leading-none text-gray-800 focus:outline-none `}
                             />
                             <div className="absolute right-0 mt-2 mr-3 cursor-pointer">
                                 <svg
@@ -148,6 +151,17 @@ function Login() {
                     </div>
                 </div>
             </form>
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     );
 }

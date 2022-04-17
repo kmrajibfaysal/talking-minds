@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/aria-role */
 /* eslint-disable no-unused-vars */
@@ -11,6 +12,7 @@ import {
     useUpdateProfile
 } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Loading from '../../Common/Loading/Loading';
 import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
@@ -78,6 +80,7 @@ function SignUp() {
 
         // user creation if all validation pass!
         await createUserWithEmailAndPassword(email, password);
+        user2 && toast('You are logged in!');
         await updateProfile({ displayName: userName });
         if (error) {
             console.log(error);
