@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/aria-role */
 /* eslint-disable no-unused-vars */
@@ -6,10 +7,12 @@
 import React, { useRef, useState } from 'react';
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import Loading from '../../Common/Loading/Loading';
 import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
 
 function Login() {
+    const [err, setErr] = useState('');
     const [user1] = useAuthState(auth);
     const navigate = useNavigate();
     const [sidebar, setSidebar] = useState();
@@ -17,12 +20,44 @@ function Login() {
     const passwordRef = useRef('');
     const [signInWithEmailAndPassword, user2, loading, error] = useSignInWithEmailAndPassword(auth);
 
+    // email validation
+    const validateEmail = (email) =>
+        String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+
     const handleLogin = async (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        await signInWithEmailAndPassword(email, password);
+        const emailCheck = validateEmail(email);
+
+        if (!email || !password) {
+            setErr('Enter a valid email and password!');
+            return;
+        }
+
+        if (password.length < 6) {
+            setErr('Password must be at least 6 char long.');
+            return;
+        }
+
+        if (validateEmail) {
+            await signInWithEmailAndPassword(email, password);
+        } else {
+            setErr('Your email is invalid!');
+        }
+
+        if (error) {
+            setErr('Something Wrong. Please try again.');
+        }
     };
+
+    if (loading) {
+        return <Loading />;
+    }
 
     if (user1 || user2) {
         navigate('/');
@@ -100,6 +135,7 @@ function Login() {
                         </div>
                     </div>
                     <div className="mt-8">
+                        {err ? <p className="mb-4 text-red-500">{err}</p> : ''}
                         <button
                             type="submit"
                             onClick={handleLogin}
