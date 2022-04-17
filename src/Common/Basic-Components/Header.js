@@ -6,7 +6,7 @@ import './Header.css';
 
 function Header() {
     return (
-        <nav className="rounded border-gray-200 bg-white px-2 py-4 shadow-sm dark:bg-gray-800 sm:py-2.5">
+        <nav className="sticky top-0 rounded border-gray-200 bg-white px-2 py-4 shadow-sm dark:bg-gray-800 sm:py-2.5">
             <div className="container mx-auto flex flex-wrap items-center justify-between">
                 <Link to="/" className="flex items-center">
                     <img src={Logo} className="mr-3 h-6 sm:h-9" alt="Talking Minds Logo" />
