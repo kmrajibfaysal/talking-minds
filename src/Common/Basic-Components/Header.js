@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../Assets/Logo.png';
 import './Header.css';
 
 function Header() {
+    const navigate = useNavigate();
     return (
         <nav className="sticky top-0 rounded border-gray-200 bg-white px-2 py-4 shadow-sm dark:bg-gray-800 sm:py-2.5">
             <div className="container mx-auto flex flex-wrap items-center justify-between transition duration-300 ease-in-out">
@@ -16,6 +17,7 @@ function Header() {
                 </Link>
                 <div className="flex md:order-2">
                     <button
+                        onClick={() => navigate('/login')}
                         type="button"
                         className="mr-3 rounded-lg bg-root px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-root hover:bg-btn  focus:outline-none md:mr-0"
                     >
