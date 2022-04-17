@@ -36,7 +36,7 @@ function Job() {
                 <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12  shadow transition duration-150 ease-out hover:shadow-lg hover:ease-in">
                     <img className="mb-4" src={couples} alt="" />
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-                        Depression Therapy
+                        Couples Counseling
                     </h5>
                     <p className="font-normal text-gray-700 dark:text-gray-400">
                         Here are the biggest enterprise technology acquisitions of 2021 so far, in
@@ -49,7 +49,7 @@ function Job() {
                 <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12  shadow transition duration-150 ease-out hover:shadow-lg hover:ease-in">
                     <img className="mb-4" src={individual} alt="" />
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-                        Depression Therapy
+                        Individual Therapy
                     </h5>
                     <p className="font-normal text-gray-700 dark:text-gray-400">
                         Here are the biggest enterprise technology acquisitions of 2021 so far, in
