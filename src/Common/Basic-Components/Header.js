@@ -1,11 +1,38 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../Assets/Logo.png';
+import auth from '../../firebase.init';
 import './Header.css';
 
 function Header() {
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
+    const handleSignOut = () => {
+        signOut(auth);
+    };
+
+    const loginBtn = (
+        <button
+            onClick={() => navigate('/login')}
+            type="button"
+            className="mr-3 rounded-lg bg-root px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-root hover:bg-btn  focus:outline-none md:mr-0"
+        >
+            Login
+        </button>
+    );
+    const logOutBtn = (
+        <button
+            onClick={handleSignOut}
+            type="button"
+            className="mr-3 rounded-lg bg-root px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-root hover:bg-btn  focus:outline-none md:mr-0"
+        >
+            Sign Out
+        </button>
+    );
+
     return (
         <nav className="sticky top-0 rounded border-gray-200 bg-white px-2 py-4 shadow-sm dark:bg-gray-800 sm:py-2.5">
             <div className="container mx-auto flex flex-wrap items-center justify-between transition duration-300 ease-in-out">
@@ -16,13 +43,7 @@ function Header() {
                     </span>
                 </Link>
                 <div className="flex md:order-2">
-                    <button
-                        onClick={() => navigate('/login')}
-                        type="button"
-                        className="mr-3 rounded-lg bg-root px-5 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-root hover:bg-btn  focus:outline-none md:mr-0"
-                    >
-                        Login
-                    </button>
+                    {user ? logOutBtn : loginBtn}
                     <button
                         data-collapse-toggle="mobile-menu-4"
                         type="button"
