@@ -6,7 +6,7 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useRef, useState } from 'react';
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../../Common/Loading/Loading';
@@ -14,6 +14,8 @@ import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
 
 function Login() {
+    const location = useLocation();
+
     const [err, setErr] = useState('');
     const [user1] = useAuthState(auth);
     const navigate = useNavigate();
@@ -21,6 +23,12 @@ function Login() {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const [signInWithEmailAndPassword, user2, loading, error] = useSignInWithEmailAndPassword(auth);
+
+    //
+
+    const from = location.state?.from?.pathname || '/';
+
+    //
 
     // email validation
     const validateEmail = (email) =>
@@ -60,6 +68,10 @@ function Login() {
 
     if (loading) {
         return <Loading />;
+    }
+
+    if (user1 || user2) {
+        navigate(from, { replace: true });
     }
 
     return (
