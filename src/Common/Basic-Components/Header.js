@@ -2,9 +2,10 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Logo from '../../Assets/Logo.png';
 import auth from '../../firebase.init';
+import ActiveLink from '../ActiveLink/ActiveLink';
 import './Header.css';
 
 function Header() {
@@ -36,12 +37,12 @@ function Header() {
     return (
         <nav className="sticky top-0 rounded border-gray-200 bg-white px-2 py-4 shadow-sm dark:bg-gray-800 sm:py-2.5">
             <div className="container mx-auto flex flex-wrap items-center justify-between transition duration-300 ease-in-out">
-                <Link to="/" className="flex items-center">
+                <ActiveLink to="/" className="flex items-center">
                     <img src={Logo} className="mr-3 h-6 sm:h-9" alt="Talking Minds Logo" />
                     <span className="self-center whitespace-nowrap text-[26px] font-bold text-root dark:text-white">
                         Talking Minds
                     </span>
-                </Link>
+                </ActiveLink>
                 <div className="flex md:order-2">
                     {user ? logOutBtn : loginBtn}
                     <button
@@ -84,37 +85,37 @@ function Header() {
                 >
                     <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
                         <li>
-                            <Link
+                            <ActiveLink
                                 to="/home"
-                                className="block rounded py-2 pr-4 pl-3  font-bold text-gray-700    hover:text-link md:p-0"
+                                className="hover:text-ActiveLink block rounded py-2 pr-4  pl-3 font-bold    text-gray-700 md:p-0"
                                 aria-current="page"
                             >
                                 Home
-                            </Link>
+                            </ActiveLink>
                         </li>
                         <li>
-                            <Link
+                            <ActiveLink
                                 to="/services"
-                                className="block rounded py-2 pr-4 pl-3 font-bold text-gray-700  hover:text-link md:p-0"
+                                className="hover:text-ActiveLink block rounded py-2 pr-4 pl-3 font-bold  text-gray-700 md:p-0"
                             >
                                 Services
-                            </Link>
+                            </ActiveLink>
                         </li>
                         <li>
-                            <Link
+                            <ActiveLink
                                 to="/checkout"
-                                className="block rounded py-2 pr-4 pl-3 font-bold text-gray-700  hover:text-link md:p-0"
+                                className="hover:text-ActiveLink block rounded py-2 pr-4 pl-3 font-bold  text-gray-700 md:p-0"
                             >
                                 Checkout
-                            </Link>
+                            </ActiveLink>
                         </li>
                         <li>
-                            <Link
+                            <ActiveLink
                                 to="/contact"
-                                className="block rounded py-2 pr-4 pl-3 font-bold text-gray-700  hover:text-link md:p-0"
+                                className="hover:text-ActiveLink block rounded py-2 pr-4 pl-3 font-bold  text-gray-700 md:p-0"
                             >
                                 Contact
-                            </Link>
+                            </ActiveLink>
                         </li>
                     </ul>
                 </div>

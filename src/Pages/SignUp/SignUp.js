@@ -12,7 +12,7 @@ import {
     useUpdateProfile
 } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import Loading from '../../Common/Loading/Loading';
 import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
@@ -45,8 +45,8 @@ function SignUp() {
 
     const handleSignUp = async (event) => {
         event.preventDefault();
-        const userName = userNameRef.current.value;
-        const email = emailRef.current.value;
+        const userName = userNameRef.current.value.trim();
+        const email = emailRef.current.value.trim();
         const password = passwordRef.current.value;
         const confirmPassword = confirmPasswordRef.current.value;
         const emailCheck = validateEmail(email);
@@ -80,10 +80,10 @@ function SignUp() {
 
         // user creation if all validation pass!
         await createUserWithEmailAndPassword(email, password);
-        user2 && toast('You are logged in!');
+        toast('A verification email sent to your email!');
         await updateProfile({ displayName: userName });
         if (error) {
-            console.log(error);
+            setErr(error.message);
         }
     };
 
@@ -225,6 +225,7 @@ function SignUp() {
                     </div>
                 </div>
             </form>
+            <ToastContainer />
         </div>
     );
 }

@@ -40,7 +40,7 @@ function Login() {
 
     const handleLogin = async (event) => {
         event.preventDefault();
-        const email = emailRef.current.value;
+        const email = emailRef.current.value.trim();
         const password = passwordRef.current.value;
         const emailCheck = validateEmail(email);
 

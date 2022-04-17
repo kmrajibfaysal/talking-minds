@@ -2,11 +2,14 @@
 /* eslint-disable react/button-has-type */
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import couples from '../../../Assets/icon/couples.png';
 import depression from '../../../Assets/icon/depression.png';
 import individual from '../../../Assets/icon/individual.png';
 
 function Job() {
+    const navigate = useNavigate();
+    const handleBtn = () => navigate('/checkout');
     return (
         <div className="mx-auto w-11/12  py-24 md:w-4/5 md:py-36 ">
             <div>
@@ -29,7 +32,10 @@ function Job() {
                         Here are the biggest enterprise technology acquisitions of 2021 so far, in
                         reverse chronological order.
                     </p>
-                    <button className="mt-2 font-bold text-root hover:scale-105">
+                    <button
+                        onClick={handleBtn}
+                        className="mt-2 font-bold text-root hover:scale-105"
+                    >
                         More info -->
                     </button>
                 </div>
@@ -42,7 +48,10 @@ function Job() {
                         Here are the biggest enterprise technology acquisitions of 2021 so far, in
                         reverse chronological order.
                     </p>
-                    <button className="mt-2 font-bold text-root hover:scale-105">
+                    <button
+                        onClick={handleBtn}
+                        className="mt-2 font-bold text-root hover:scale-105"
+                    >
                         More info -->
                     </button>
                 </div>
@@ -55,13 +64,19 @@ function Job() {
                         Here are the biggest enterprise technology acquisitions of 2021 so far, in
                         reverse chronological order.
                     </p>
-                    <button className="mt-2 font-bold text-root hover:scale-105">
+                    <button
+                        onClick={handleBtn}
+                        className="mt-2 font-bold text-root hover:scale-105"
+                    >
                         More info -->
                     </button>
                 </div>
             </div>
             <div className="mx-auto flex items-center justify-center">
-                <button className="mx-4 mb-3 mt-5 rounded-full bg-root px-[40px] py-[14px] font-bold text-white hover:scale-105">
+                <button
+                    onClick={handleBtn}
+                    className="mx-4 mb-3 mt-5 rounded-full bg-root px-[40px] py-[14px] font-bold text-white hover:scale-105"
+                >
                     All Programs
                 </button>
             </div>
