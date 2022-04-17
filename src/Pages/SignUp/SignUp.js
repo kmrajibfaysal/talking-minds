@@ -4,22 +4,39 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useRef, useState } from 'react';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import {
+    useAuthState,
+    useCreateUserWithEmailAndPassword,
+    // eslint-disable-next-line prettier/prettier
+    useUpdateProfile
+} from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../../Common/Loading/Loading';
-import SocialLogin from '../../Common/SocailLogin/SocialLogin';
+import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
 
 function SignUp() {
+    const [err, setErr] = useState('');
     const [sidebar, setSidebar] = useState();
     const userNameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const confirmPasswordRef = useRef('');
     const navigate = useNavigate();
+    const [user1] = useAuthState(auth);
+
+    // Email validation regex
+    const validateEmail = (email) =>
+        String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+
+    const validPassword = (password) => password.length >= 6;
 
     // variable related to react-firebase hooks
-    const [createUserWithEmailAndPassword, user, loading, error] =
+    const [createUserWithEmailAndPassword, user2, loading, error] =
         useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
@@ -30,9 +47,38 @@ function SignUp() {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const confirmPassword = confirmPasswordRef.current.value;
+        const emailCheck = validateEmail(email);
+        const passwordCheck = validPassword(password);
+
+        // input error handling
+
+        if (!userName) {
+            setErr('Please enter your name!');
+            return;
+        }
+        if (!validateEmail(email)) {
+            setErr('Enter a valid email!');
+            return;
+        }
+
+        if (!(password === confirmPassword)) {
+            setErr('Password do not match');
+            return;
+        }
+
+        if (!passwordCheck) {
+            setErr('Password must be at least 6 character long!');
+            return;
+        }
+
+        if (!userName && !email && !password) {
+            setErr('Fill up all the field!');
+            return;
+        }
+
+        // user creation if all validation pass!
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: userName });
-        navigate('/home');
         if (error) {
             console.log(error);
         }
@@ -40,6 +86,10 @@ function SignUp() {
 
     if (updating || loading) {
         return <Loading />;
+    }
+
+    if (user1 || user2) {
+        navigate('/');
     }
 
     return (
@@ -78,6 +128,7 @@ function SignUp() {
                             Your full name
                         </label>
                         <input
+                            required
                             ref={userNameRef}
                             aria-label="enter email address"
                             role="input"
@@ -90,6 +141,7 @@ function SignUp() {
                             Email
                         </label>
                         <input
+                            required
                             ref={emailRef}
                             aria-label="enter email address"
                             role="input"
@@ -103,6 +155,7 @@ function SignUp() {
                         </label>
                         <div className="relative flex items-center justify-center">
                             <input
+                                required
                                 ref={passwordRef}
                                 aria-label="enter Password"
                                 role="input"
@@ -131,6 +184,7 @@ function SignUp() {
                         </label>
                         <div className="relative flex items-center justify-center">
                             <input
+                                required
                                 ref={confirmPasswordRef}
                                 aria-label="enter Password"
                                 role="input"
@@ -154,7 +208,9 @@ function SignUp() {
                         </div>
                     </div>
                     <div className="mt-8">
+                        {err ? <p className="mb-4 text-red-500">{err}</p> : ''}
                         <button
+                            /* disabled={!!err} */
                             onClick={handleSignUp}
                             type="submit"
                             role="button"

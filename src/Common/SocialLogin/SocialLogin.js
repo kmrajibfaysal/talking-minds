@@ -30,10 +30,9 @@ function SocialLogin() {
 
     return (
         <>
-            <div>
-                {loading1 || loading2 ? <p>Loading...</p> : ''}
+            <div className="mt-3">
                 {error1 || error2 ? (
-                    <p className="text-red-600">Error: {error1?.message || error2?.message}</p>
+                    <p className="text-red-600">Something Wrong! Try again later.</p>
                 ) : (
                     ''
                 )}

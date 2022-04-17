@@ -4,29 +4,29 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useRef, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
-import SocialLogin from '../../Common/SocailLogin/SocialLogin';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import SocialLogin from '../../Common/SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
 
 function Login() {
+    const [user1] = useAuthState(auth);
+    const navigate = useNavigate();
     const [sidebar, setSidebar] = useState();
     const emailRef = useRef('');
     const passwordRef = useRef('');
-    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
-
-    const handleGoogleSignin = () => {};
-    const handleGithubSignin = () => {};
-    const handleTwitterSignin = () => {};
+    const [signInWithEmailAndPassword, user2, loading, error] = useSignInWithEmailAndPassword(auth);
 
     const handleLogin = async (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password);
-        console.log(user);
-        console.log(email, password);
     };
+
+    if (user1 || user2) {
+        navigate('/');
+    }
 
     return (
         <div className="w-full px-4 md:py-16">
