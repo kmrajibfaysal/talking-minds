@@ -15,7 +15,7 @@ function Banner() {
                 </h1>
 
                 <p className="my-7 p-5 text-xl text-gray-700">
-                    We help our clients address these critical imperatives through intelligent,
+                    I help my clients address these critical imperatives through intelligent,
                     cloud-based solutions that increase resource capacity, improve workforce
                     productivity, connect data for personalized services across channels, and
                     improve the quality of care and therapeutics.

@@ -5,7 +5,10 @@ import '../Banner/Banner.css';
 
 function AboutMe() {
     return (
-        <div className="mx-auto mb-32 mt-5 flex w-11/12 flex-col items-center justify-center md:order-2 md:mt-24 md:w-4/5 md:flex-row lg:mt-32">
+        <div
+            id="about"
+            className="mx-auto mb-32 mt-5 flex w-11/12 flex-col items-center justify-center md:order-2 md:mt-24 md:w-4/5 md:flex-row lg:mt-32"
+        >
             <div className="box-shadow2 mt-5 mb-10 w-full max-w-xl md:order-1 md:w-1/2">
                 <img className=" w-full rounded-tl-[150px]" src={AboutMeP} alt="" />
             </div>
@@ -15,7 +18,7 @@ function AboutMe() {
                 </h1>
 
                 <p className="my-7 p-5 text-xl text-gray-700">
-                    We help our clients address these critical imperatives through intelligent,
+                    I help my clients address these critical imperatives through intelligent,
                     cloud-based solutions that increase resource capacity.
                 </p>
 

@@ -7,7 +7,7 @@ import './Header.css';
 function Header() {
     return (
         <nav className="sticky top-0 rounded border-gray-200 bg-white px-2 py-4 shadow-sm dark:bg-gray-800 sm:py-2.5">
-            <div className="container mx-auto flex flex-wrap items-center justify-between">
+            <div className="container mx-auto flex flex-wrap items-center justify-between transition duration-300 ease-in-out">
                 <Link to="/" className="flex items-center">
                     <img src={Logo} className="mr-3 h-6 sm:h-9" alt="Talking Minds Logo" />
                     <span className="self-center whitespace-nowrap text-[26px] font-bold text-root dark:text-white">
@@ -63,7 +63,7 @@ function Header() {
                         <li>
                             <Link
                                 to="/home"
-                                className="block rounded py-2 pr-4 pl-3 text-gray-700    hover:text-link md:p-0"
+                                className="block rounded py-2 pr-4 pl-3  font-bold text-gray-700    hover:text-link md:p-0"
                                 aria-current="page"
                             >
                                 Home
@@ -72,7 +72,7 @@ function Header() {
                         <li>
                             <Link
                                 to="/about"
-                                className="block rounded py-2 pr-4 pl-3 text-gray-700  hover:text-link md:p-0"
+                                className="block rounded py-2 pr-4 pl-3 font-bold text-gray-700  hover:text-link md:p-0"
                             >
                                 About
                             </Link>
@@ -80,7 +80,7 @@ function Header() {
                         <li>
                             <Link
                                 to="/services"
-                                className="block rounded py-2 pr-4 pl-3 text-gray-700  hover:text-link md:p-0"
+                                className="block rounded py-2 pr-4 pl-3 font-bold text-gray-700  hover:text-link md:p-0"
                             >
                                 Services
                             </Link>
@@ -88,7 +88,7 @@ function Header() {
                         <li>
                             <Link
                                 to="/contact"
-                                className="block rounded py-2 pr-4 pl-3 text-gray-700  hover:text-link md:p-0"
+                                className="block rounded py-2 pr-4 pl-3 font-bold text-gray-700  hover:text-link md:p-0"
                             >
                                 Contact
                             </Link>
