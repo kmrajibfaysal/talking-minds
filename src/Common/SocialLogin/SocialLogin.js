@@ -3,7 +3,12 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React from 'react';
-import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import {
+    useSignInWithGithub,
+    useSignInWithGoogle,
+    // eslint-disable-next-line prettier/prettier
+    useSignInWithTwitter
+} from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
@@ -13,8 +18,9 @@ function SocialLogin() {
     const navigate = useNavigate();
     const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
     const [signInWithGithub, user2, loading2, error2] = useSignInWithGithub(auth);
+    const [signInWithTwitter, user3, loading3, error3] = useSignInWithTwitter(auth);
 
-    if (loading1 || loading2) {
+    if (loading1 || loading2 || loading3) {
         return <Loading />;
     }
 
@@ -26,6 +32,12 @@ function SocialLogin() {
     const handleGithubLogin = async () => {
         await signInWithGithub();
         user2 && toast('You are logged in!');
+    };
+
+    const handleTwitterLogin = async () => {
+        await signInWithTwitter();
+        user3 && toast('You are logged in!');
+        if (error3) console.log(error3);
     };
 
     return (
@@ -91,6 +103,7 @@ function SocialLogin() {
                     <p className="ml-4 text-base font-medium text-gray-700">Continue with Github</p>
                 </button>
                 <button
+                    onClick={handleTwitterLogin}
                     aria-label="Continue with twitter"
                     role="button"
                     className="mt-4  flex w-full items-center rounded-lg border border-gray-700 py-3.5 px-4 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-1"

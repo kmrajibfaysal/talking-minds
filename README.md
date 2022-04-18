@@ -1,6 +1,6 @@
 # Private mental health consultation from a professional named 'Talking Minds'
 
-# Live Link:
+# Live Link: https://talking-minds-40b18.web.app/
 
 ## Features:
 
