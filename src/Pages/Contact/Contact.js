@@ -3,7 +3,7 @@ import React from 'react';
 
 function Contact() {
     return (
-        <div className="my-12 mx-5 flex items-center justify-center">
+        <div className="pb-18 my-12 mx-5 flex items-center justify-center py-5">
             {' '}
             <form className="w-full max-w-lg">
                 <div className="-mx-3 mb-6 flex flex-wrap">

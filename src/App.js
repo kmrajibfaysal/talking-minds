@@ -9,6 +9,7 @@ import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import NotFound from './Pages/NotFound/NotFound';
+import Services from './Pages/Services/Services';
 import SignUp from './Pages/SignUp/SignUp';
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
                         </RequiredAuth>
                     }
                 />
-                <Route path="/services" element={<Home />} />
+                <Route path="/services" element={<Services />} />
                 <Route path="/about" element={<AboutMe />} />
                 <Route path="/blogs" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
