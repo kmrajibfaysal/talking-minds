@@ -126,7 +126,7 @@ function Login() {
                     </div>
                     <div>
                         <label className="text-sm font-medium leading-none text-gray-800">
-                            Email
+                            Email<span className="text-red-500">*</span>
                         </label>
                         <input
                             ref={emailRef}
@@ -140,7 +140,7 @@ function Login() {
                     </div>
                     <div className="mt-6  w-full">
                         <label className="text-sm font-medium leading-none text-gray-800">
-                            Password
+                            Password<span className="text-red-500">*</span>
                         </label>
                         <div className="relative flex items-center justify-center">
                             <input
@@ -186,7 +186,7 @@ function Login() {
                                     href="/"
                                     className="text-root hover:underline dark:text-blue-500"
                                 >
-                                    terms and conditions
+                                    terms and conditions<span className="text-red-500">*</span>
                                 </a>
                             </label>
                         </div>

@@ -1,350 +1,133 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/button-has-type */
-
-import React from 'react';
+/* eslint-disable jsx-a11y/aria-role */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/no-unescaped-entities */
 
 function CheckOut() {
     return (
-        <div className="mx-auto w-11/12  py-24 md:w-4/5 md:py-36 ">
-            <div>
-                <h1 className="lg-text-6xl ml-4 text-center text-4xl font-black text-gray-700 md:text-5xl">
-                    Pricing
-                </h1>
-                <p className=" mt-3 text-center text-xl text-gray-700">
-                    Here are three types of service plan I am providing right now.
-                </p>
-            </div>
+        <section className="min-h-screen bg-gray-100 p-4 text-gray-600 antialiased">
+            <div className="h-full">
+                <div>
+                    <div className="relative mx-auto max-w-lg px-4 pt-4 pb-8 sm:px-6 lg:px-8">
+                        <div className="rounded bg-white px-8 pt-6 pb-6 shadow-lg">
+                            <div className="mb-6 text-center">
+                                <h1 className="mb-2 text-xl font-semibold leading-snug text-gray-800">
+                                    Your personal Treatment
+                                </h1>
+                                <div className="text-sm">
+                                    A beginning you your upmost valuable personal treatment and
+                                    consultent with me.
+                                </div>
+                            </div>
 
-            <div className="mx-auto mt-9 flex max-w-7xl flex-col items-center justify-between  md:flex-row">
-                <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12 shadow  transition duration-150 ease-out hover:shadow-lg hover:ease-in md:p-16">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-                        Light Session
-                    </h5>
-                    <div className="text-[54px] font-black text-root">$159</div>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            3 session / month
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            Group psychotherapy
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            Duration 30 minutes
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-gray-500">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-500 ">
-                            Personal meeting
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-gray-500">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-500 ">
-                            Support 24 hours
-                        </span>
-                    </li>
-                    <button className="mx-auto mt-3 mb-3 w-full  rounded-full border border-root px-[40px] py-[14px] font-bold text-root hover:scale-105">
-                        Buy now
-                    </button>
-                </div>
-                <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12 shadow  transition duration-150 ease-out hover:shadow-lg hover:ease-in md:p-16">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-                        Standard Session
-                    </h5>
-                    <div className="text-[54px] font-black text-root">$250</div>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            6 session / month
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            Group psychotherapy
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            Duration 30 minutes
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            Personal meeting
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-gray-500">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-500 ">
-                            Support 24 hours
-                        </span>
-                    </li>
-                    <button className="mx-auto mt-3 mb-3 w-full  rounded-full border border-root bg-root px-[40px] py-[14px] font-bold text-white hover:scale-105">
-                        Buy now
-                    </button>
-                </div>
-                <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12 shadow  transition duration-150 ease-out hover:shadow-lg hover:ease-in md:p-16">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-                        Individual session
-                    </h5>
-                    <div className="text-[54px] font-black text-root">$400</div>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            3 session / month
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            Group psychotherapy
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            Duration 30 minutes
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            Personal meeting
-                        </span>
-                    </li>
-                    <li className="my-3 list-none text-gray-700">
-                        <span className=" text-link">
-                            <svg
-                                className="inline h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </span>
-                        <span className="ml-2 text-lg font-bold text-gray-600 ">
-                            Support 24 hours
-                        </span>
-                    </li>
-                    <button className="mx-auto mt-3 mb-3 w-full  rounded-full border border-root px-[40px] py-[14px] font-bold text-root hover:scale-105">
-                        Buy now
-                    </button>
+                            <div className="mb-6 flex justify-center">
+                                <div className="relative flex w-full rounded bg-gray-50 p-1">
+                                    <span
+                                        className="pointer-events-none absolute inset-0 m-1"
+                                        aria-hidden="true"
+                                    >
+                                        <span className="absolute inset-0 w-1/2 transform rounded border border-gray-200 bg-white shadow-sm transition duration-150 ease-in-out" />
+                                    </span>
+                                    <button className="relative flex-1 p-1 text-sm font-medium transition duration-150 ease-in-out focus:outline-none focus-visible:ring-2">
+                                        Pay With Card
+                                    </button>
+                                    <button className="relative flex-1 p-1 text-sm font-medium transition duration-150 ease-in-out focus:outline-none focus-visible:ring-2">
+                                        Pay With PayPal
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-show="card">
+                                <div className="space-y-4">
+                                    <div>
+                                        <label
+                                            className="mb-1 block text-sm font-medium"
+                                            htmlFor="card-nr"
+                                        >
+                                            Card Number <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            id="card-nr"
+                                            className="w-full rounded border border-gray-200 bg-white py-2 px-3 text-sm leading-5 text-gray-800 placeholder-gray-400 shadow-sm hover:border-gray-300 focus:border-indigo-300 focus:ring-0"
+                                            type="text"
+                                            placeholder="1234 1234 1234 1234"
+                                        />
+                                    </div>
+
+                                    <div className="flex space-x-4">
+                                        <div className="flex-1">
+                                            <label
+                                                className="mb-1 block text-sm font-medium"
+                                                htmlFor="card-expiry"
+                                            >
+                                                Expiry Date <span className="text-red-500">*</span>
+                                            </label>
+                                            <input
+                                                id="card-expiry"
+                                                className="w-full rounded border border-gray-200 bg-white py-2 px-3 text-sm leading-5 text-gray-800 placeholder-gray-400 shadow-sm hover:border-gray-300 focus:border-indigo-300 focus:ring-0"
+                                                type="text"
+                                                placeholder="MM/YY"
+                                            />
+                                        </div>
+                                        <div className="flex-1">
+                                            <label
+                                                className="mb-1 block text-sm font-medium"
+                                                htmlFor="card-cvc"
+                                            >
+                                                CVC <span className="text-red-500">*</span>
+                                            </label>
+                                            <input
+                                                id="card-cvc"
+                                                className="w-full rounded border border-gray-200 bg-white py-2 px-3 text-sm leading-5 text-gray-800 placeholder-gray-400 shadow-sm hover:border-gray-300 focus:border-indigo-300 focus:ring-0"
+                                                type="text"
+                                                placeholder="CVC"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            className="mb-1 block text-sm font-medium"
+                                            htmlFor="card-name"
+                                        >
+                                            Name on Card <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            id="card-name"
+                                            className="w-full rounded border border-gray-200 bg-white py-2 px-3 text-sm leading-5 text-gray-800 placeholder-gray-400 shadow-sm hover:border-gray-300 focus:border-indigo-300 focus:ring-0"
+                                            type="text"
+                                            placeholder="John Doe"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            className="mb-1 block text-sm font-medium"
+                                            htmlFor="card-email"
+                                        >
+                                            Email <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            id="card-email"
+                                            className="w-full rounded border border-gray-200 bg-white py-2 px-3 text-sm leading-5 text-gray-800 placeholder-gray-400 shadow-sm hover:border-gray-300 focus:border-indigo-300 focus:ring-0"
+                                            type="email"
+                                            placeholder="john@company.com"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="mt-6">
+                                    <div className="mb-4">
+                                        <button className="inline-flex w-full items-center justify-center rounded border border-transparent bg-indigo-500 px-3 py-2 text-sm font-medium leading-5 text-white shadow-sm transition duration-150 ease-in-out hover:bg-indigo-600 focus:outline-none focus-visible:ring-2">
+                                            Pay
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

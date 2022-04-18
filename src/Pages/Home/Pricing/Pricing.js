@@ -1,24 +1,31 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/button-has-type */
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import couples from '../../../Assets/icon/couples.png';
+import depression from '../../../Assets/icon/depression.png';
+import individual from '../../../Assets/icon/individual.png';
 
 function Pricing() {
+    const navigate = useNavigate();
+    const handleBtn = () => navigate('/checkout');
     return (
         <div className="mx-auto w-11/12  py-24 md:w-4/5 md:py-36 ">
             <div>
                 <h1 className="lg-text-6xl ml-4 text-center text-4xl font-black text-gray-700 md:text-5xl">
-                    Pricing
+                    What I am Offerring
                 </h1>
                 <p className=" mt-3 text-center text-xl text-gray-700">
-                    Here are three types of service plan I am providing right now.
+                    Any mental related help you need to maintain your daily life and health
+                    assurance.
                 </p>
             </div>
 
             <div className="mx-auto mt-9 flex max-w-7xl flex-col items-center justify-between  md:flex-row">
                 <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12 shadow  transition duration-150 ease-out hover:shadow-lg hover:ease-in md:p-16">
+                    <img className="mb-4" src={depression} alt="" />
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-                        Light Session
+                        Depression Therapy
                     </h5>
                     <div className="text-[54px] font-black text-root">$159</div>
                     <li className="my-3 list-none text-gray-700">
@@ -121,13 +128,17 @@ function Pricing() {
                             Support 24 hours
                         </span>
                     </li>
-                    <button className="mx-auto mt-3 mb-3 w-full  rounded-full border border-root px-[40px] py-[14px] font-bold text-root hover:scale-105">
+                    <button
+                        onClick={handleBtn}
+                        className="mx-auto mt-3 mb-3 w-full  rounded-full border border-root px-[40px] py-[14px] font-bold text-root hover:scale-105"
+                    >
                         Buy now
                     </button>
                 </div>
                 <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12 shadow  transition duration-150 ease-out hover:shadow-lg hover:ease-in md:p-16">
+                    <img className="mb-4" src={couples} alt="" />
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-                        Standard Session
+                        Couples Counseling
                     </h5>
                     <div className="text-[54px] font-black text-root">$250</div>
                     <li className="my-3 list-none text-gray-700">
@@ -230,13 +241,17 @@ function Pricing() {
                             Support 24 hours
                         </span>
                     </li>
-                    <button className="mx-auto mt-3 mb-3 w-full  rounded-full border border-root bg-root px-[40px] py-[14px] font-bold text-white hover:scale-105">
+                    <button
+                        onClick={handleBtn}
+                        className="mx-auto mt-3 mb-3 w-full  rounded-full border border-root bg-root px-[40px] py-[14px] font-bold text-white hover:scale-105"
+                    >
                         Buy now
                     </button>
                 </div>
                 <div className="mx-4 my-5 max-w-md rounded-3xl bg-white p-12 shadow  transition duration-150 ease-out hover:shadow-lg hover:ease-in md:p-16">
+                    <img className="mb-4" src={individual} alt="" />
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-                        Individual session
+                        Individual Therapy
                     </h5>
                     <div className="text-[54px] font-black text-root">$400</div>
                     <li className="my-3 list-none text-gray-700">
@@ -339,7 +354,10 @@ function Pricing() {
                             Support 24 hours
                         </span>
                     </li>
-                    <button className="mx-auto mt-3 mb-3 w-full  rounded-full border border-root px-[40px] py-[14px] font-bold text-root hover:scale-105">
+                    <button
+                        onClick={handleBtn}
+                        className="mx-auto mt-3 mb-3 w-full  rounded-full border border-root px-[40px] py-[14px] font-bold text-root hover:scale-105"
+                    >
                         Buy now
                     </button>
                 </div>

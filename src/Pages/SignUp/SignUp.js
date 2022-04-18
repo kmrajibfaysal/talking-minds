@@ -128,7 +128,7 @@ function SignUp() {
                     </div>
                     <div>
                         <label className="text-sm font-medium leading-none text-gray-800">
-                            Your full name
+                            Your full name<span className="text-red-500">*</span>
                         </label>
                         <input
                             required
@@ -141,7 +141,7 @@ function SignUp() {
                     </div>
                     <div>
                         <label className="text-sm font-medium leading-none text-gray-800">
-                            Email
+                            Email<span className="text-red-500">*</span>
                         </label>
                         <input
                             required
@@ -154,7 +154,7 @@ function SignUp() {
                     </div>
                     <div className="mt-6  w-full">
                         <label className="text-sm font-medium leading-none text-gray-800">
-                            Password
+                            Password<span className="text-red-500">*</span>
                         </label>
                         <div className="relative flex items-center justify-center">
                             <input
@@ -183,7 +183,7 @@ function SignUp() {
                     </div>
                     <div className="mt-6  w-full">
                         <label className="text-sm font-medium leading-none text-gray-800">
-                            Confirm password
+                            Confirm password<span className="text-red-500">*</span>
                         </label>
                         <div className="relative flex items-center justify-center">
                             <input

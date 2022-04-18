@@ -103,10 +103,18 @@ function Header() {
                         </li>
                         <li>
                             <ActiveLink
-                                to="/checkout"
+                                to="/Blogs"
                                 className="hover:text-ActiveLink block rounded py-2 pr-4 pl-3 font-bold  text-gray-700 md:p-0"
                             >
-                                Checkout
+                                Blogs
+                            </ActiveLink>
+                        </li>
+                        <li>
+                            <ActiveLink
+                                to="/about"
+                                className="hover:text-ActiveLink block rounded py-2 pr-4 pl-3 font-bold  text-gray-700 md:p-0"
+                            >
+                                About
                             </ActiveLink>
                         </li>
                         <li>

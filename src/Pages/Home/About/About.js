@@ -3,7 +3,7 @@ import React from 'react';
 import AboutMeP from '../../../Assets/banner/abouteMe.jpg';
 import '../Banner/Banner.css';
 
-function AboutMe() {
+function About() {
     return (
         <div
             id="about"
@@ -136,4 +136,4 @@ function AboutMe() {
     );
 }
 
-export default AboutMe;
+export default About;

@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Footer from './Common/Basic-Components/Footer';
 import Header from './Common/Basic-Components/Header';
 import RequiredAuth from './Common/RequiredAuth/RequiredAuth';
+import Blog from './Pages/Blog/Blog';
 import Checkout from './Pages/Checkout/Checkout';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -25,6 +26,8 @@ function App() {
                 />
                 <Route path="/services" element={<Home />} />
                 <Route path="/contact" element={<Home />} />
+                <Route path="/about" element={<Home />} />
+                <Route path="/blogs" element={<Blog />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/*" element={<NotFound />} />
