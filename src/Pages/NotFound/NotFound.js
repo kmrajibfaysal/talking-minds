@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function NotFound() {
     return (
-        <div>
+        <div className="flex h-screen items-center justify-center">
             <div className="error-container">
                 <img
                     src="https://raw.githubusercontent.com/babulakterfsd/imgsrc/main/404.png"
