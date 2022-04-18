@@ -5,7 +5,12 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useRef, useState } from 'react';
-import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+    useAuthState,
+    useSendPasswordResetEmail,
+    // eslint-disable-next-line prettier/prettier
+    useSignInWithEmailAndPassword
+} from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,6 +20,7 @@ import auth from '../../firebase.init';
 
 function Login() {
     const location = useLocation();
+    const [agree, setAgree] = useState(false);
 
     const [err, setErr] = useState('');
     const [user1] = useAuthState(auth);
@@ -23,6 +29,8 @@ function Login() {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const [signInWithEmailAndPassword, user2, loading, error] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(auth);
 
     //
 
@@ -37,6 +45,17 @@ function Login() {
             .match(
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             );
+
+    const handleResetPassword = async (event) => {
+        event.preventDefault();
+        const email = emailRef.current.value.trim();
+        if (validateEmail(email)) {
+            await sendPasswordResetEmail(email);
+            toast('Password reset email sent!');
+        } else {
+            setErr('Something wrong! Try again');
+        }
+    };
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -54,7 +73,7 @@ function Login() {
             return;
         }
 
-        if (validateEmail) {
+        if (validateEmail(email)) {
             await signInWithEmailAndPassword(email, password);
             toast('You are logged in!');
         } else {
@@ -151,6 +170,32 @@ function Login() {
                     </div>
                     <div className="mt-8">
                         {err ? <p className="mb-4 text-red-500">{err}</p> : ''}
+                        <div className="mb-4 flex items-center">
+                            <input
+                                id="checkbox-1"
+                                aria-describedby="checkbox-1"
+                                type="checkbox"
+                                className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-root"
+                            />
+                            <label
+                                htmlFor="checkbox-1"
+                                className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                            >
+                                I agree to the{' '}
+                                <a
+                                    href="/"
+                                    className="text-root hover:underline dark:text-blue-500"
+                                >
+                                    terms and conditions
+                                </a>
+                            </label>
+                        </div>
+                        <button
+                            onClick={handleResetPassword}
+                            className="mb-4 cursor-pointer text-sm font-semibold text-gray-800 hover:text-root hover:underline"
+                        >
+                            Forget password?
+                        </button>
                         <button
                             type="submit"
                             onClick={handleLogin}
@@ -163,17 +208,7 @@ function Login() {
                     </div>
                 </div>
             </form>
-            <ToastContainer
-                position="top-center"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
+            <ToastContainer />
         </div>
     );
 }
