@@ -51,9 +51,9 @@ function Login() {
         const email = emailRef.current.value.trim();
         if (validateEmail(email)) {
             await sendPasswordResetEmail(email);
-            toast('Password reset email sent!');
+            toast('If user exist a password reset email sent!');
         } else {
-            setErr('Something wrong! Try again');
+            setErr('Please provide a valid email.');
         }
     };
 
@@ -75,7 +75,11 @@ function Login() {
 
         if (validateEmail(email)) {
             await signInWithEmailAndPassword(email, password);
-            toast('You are logged in!');
+            if (user2) {
+                toast('You are logged in!');
+            } else {
+                setErr('No user found please sign up!');
+            }
         } else {
             setErr('Your email is invalid!');
         }

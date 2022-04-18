@@ -23,7 +23,7 @@ function About() {
                 </p>
 
                 <div className="mt-6 flex flex-col lg:flex-row">
-                    <div>
+                    <div className="text-center">
                         <li className="my-3 list-none text-gray-700">
                             <span className=" text-link">
                                 <svg
@@ -64,7 +64,7 @@ function About() {
                                 Couple Problem
                             </span>
                         </li>
-                        <li className="my-3 list-none text-gray-700">
+                        <li className="my-3 list-none text-center text-gray-700">
                             <span className=" text-link">
                                 <svg
                                     className="inline h-6 w-6"
@@ -85,7 +85,7 @@ function About() {
                             </span>
                         </li>
                     </div>
-                    <div className="lg:ml-10">
+                    <div className="text-center lg:ml-10">
                         <li className="my-3 list-none text-gray-700">
                             <span className=" text-link">
                                 <svg
@@ -103,7 +103,7 @@ function About() {
                                 </svg>
                             </span>
                             <span className="ml-2 text-lg font-bold hover:text-link ">
-                                Online Therapy
+                                Unique technique
                             </span>
                         </li>
                         <li className="my-3 list-none text-gray-700">
@@ -123,14 +123,16 @@ function About() {
                                 </svg>
                             </span>
                             <span className="ml-2 text-lg font-bold hover:text-link ">
-                                Online Therapy
+                                Group Therapy
                             </span>
                         </li>
                     </div>
                 </div>
-                <button className="mx-1 mt-5 rounded-full bg-root px-[40px] py-[14px] text-white hover:scale-105">
-                    Learn More
-                </button>
+                <div className="flex justify-center">
+                    <button className="mx-1 mt-5 rounded-full bg-root px-[40px] py-[14px] text-white hover:scale-105">
+                        Learn More
+                    </button>
+                </div>
             </div>
         </div>
     );
